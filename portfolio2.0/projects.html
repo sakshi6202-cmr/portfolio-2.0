@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projects | Sakshi Kumari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-dark">
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="brand-logo">
+          <div class="brand-logo-inner">SK</div>
+        </div>
+        <div>
+          <div class="brand-text-main">Sakshi Kumari</div>
+          <div class="brand-text-sub">AI &amp; ML · Data · Azure</div>
+        </div>
+      </div>
+
+      <nav class="nav-right">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="skills.html">Skills</a>
+          <a href="projects.html" class="active">Projects</a>
+          <a href="experience.html">Experience</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="glass-shell">
+      <section>
+        <div class="section-header">
+          <div class="section-title">
+            <span class="section-title-badge"></span>
+            Featured Projects
+          </div>
+          <p class="section-subtitle">A curated list of my AI, ML, and data engineering work.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-tag">Data Engineering</div>
+            <h3 class="project-title">Car Sales Data Engineering Pipeline</h3>
+            <p class="project-desc">
+              Designed and implemented a robust ETL pipeline for automotive sales data using Azure Data Factory and Databricks.
+              Leveraged PySpark for cleansing, transformation, and aggregation, storing curated data in Delta Lake for
+              downstream analytics.
+            </p>
+            <p class="project-tech">
+              <span>Stack:</span> Azure Data Factory, Azure Databricks, PySpark, Delta Lake, SQL
+            </p>
+            <div class="project-footer">
+              <div class="project-pill-row">
+                <span class="project-pill">ETL</span>
+                <span class="project-pill">Data Modeling</span>
+                <span class="project-pill">Business Insights</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-tag">Machine Learning</div>
+            <h3 class="project-title">Customer Churn Prediction</h3>
+            <p class="project-desc">
+              Built an ML model to predict customer churn using XGBoost and deep learning in TensorFlow. Performed extensive
+              feature engineering and hyperparameter tuning, then deployed an end-to-end ML pipeline with Azure ML Studio.
+            </p>
+            <p class="project-tech">
+              <span>Stack:</span> Python, TensorFlow, XGBoost, Azure ML Studio, Pandas, Scikit-learn
+            </p>
+            <div class="project-footer">
+              <div class="project-pill-row">
+                <span class="project-pill">Classification</span>
+                <span class="project-pill">MLOps</span>
+                <span class="project-pill">Model Evaluation</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div class="project-tag">Applied AI</div>
+            <h3 class="project-title">Intelligent Document Processing System</h3>
+            <p class="project-desc">
+              Created an AI-powered solution that extracts structured data from scanned invoices using OCR and NLP.
+              Integrated Azure Cognitive Services for text extraction and entity recognition, and automated workflows using
+              Azure Functions and Logic Apps.
+            </p>
+            <p class="project-tech">
+              <span>Stack:</span> Azure Cognitive Services, Python, OCR, NLP, Azure Functions, Logic Apps
+            </p>
+            <div class="project-footer">
+              <div class="project-pill-row">
+                <span class="project-pill">Automation</span>
+                <span class="project-pill">NLP</span>
+                <span class="project-pill">Serverless</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        © <span id="year"></span> Sakshi Kumari · Projects page.
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const body = document.body;
+    const toggleBtn = document.getElementById("theme-toggle");
+    const savedTheme = localStorage.getItem("sakshi-theme");
+
+    if (savedTheme === "light") {
+      body.classList.remove("theme-dark");
+      body.classList.add("theme-light");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      const isLight = body.classList.toggle("theme-light");
+      body.classList.toggle("theme-dark", !isLight);
+      toggleBtn.textContent = isLight ? "☀️" : "🌙";
+      localStorage.setItem("sakshi-theme", isLight ? "light" : "dark");
+    });
+  </script>
+</body>
+</html>

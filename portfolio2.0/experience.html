@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Experience | Sakshi Kumari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-dark">
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="brand-logo">
+          <div class="brand-logo-inner">SK</div>
+        </div>
+        <div>
+          <div class="brand-text-main">Sakshi Kumari</div>
+          <div class="brand-text-sub">AI &amp; ML · Data · Azure</div>
+        </div>
+      </div>
+
+      <nav class="nav-right">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="skills.html">Skills</a>
+          <a href="projects.html">Projects</a>
+          <a href="experience.html" class="active">Experience</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="glass-shell">
+      <section>
+        <div class="section-header">
+          <div class="section-title">
+            <span class="section-title-badge"></span>
+            Experience &amp; Education
+          </div>
+          <p class="section-subtitle">Blending real-world IT exposure with AI / ML specialization.</p>
+        </div>
+
+        <div class="timeline-wrap">
+          <!-- Experience -->
+          <div class="timeline">
+            <article class="timeline-card">
+              <div class="timeline-label">Professional Experience</div>
+              <div class="timeline-title">Service Desk Analyst · Microland Limited</div>
+              <div class="timeline-meta">June 2024 – Present · Bangalore</div>
+              <ul class="timeline-list">
+                <li>Delivered IT support and issue resolution for enterprise clients using ServiceNow.</li>
+                <li>Assisted infrastructure teams with troubleshooting, helping improve system reliability.</li>
+                <li>Gained strong exposure to cloud-driven enterprise environments and SLAs.</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Education & Certifications -->
+          <div class="timeline">
+            <article class="timeline-card">
+              <div class="timeline-label">Education</div>
+              <div class="edu-list">
+                <div>
+                  <div class="edu-item-title">MCA – AI &amp; Machine Learning</div>
+                  <div class="edu-item-meta">Chandigarh University · 2024 – 2026 (Expected)</div>
+                </div>
+                <div>
+                  <div class="edu-item-title">Bachelor of Computer Applications</div>
+                  <div class="edu-item-meta">CMR University, Bangalore · 2024</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-card">
+              <div class="timeline-label">Certifications</div>
+              <div class="edu-list">
+                <div>
+                  <div class="edu-item-title">Microsoft Certified: Azure Fundamentals (AZ-900)</div>
+                  <div class="edu-item-meta">Cloud fundamentals &amp; Azure services</div>
+                </div>
+                <div>
+                  <div class="edu-item-title">HackerRank SQL Intermediate</div>
+                  <div class="edu-item-meta">Relational queries &amp; data manipulation</div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        © <span id="year"></span> Sakshi Kumari · Experience page.
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const body = document.body;
+    const toggleBtn = document.getElementById("theme-toggle");
+    const savedTheme = localStorage.getItem("sakshi-theme");
+
+    if (savedTheme === "light") {
+      body.classList.remove("theme-dark");
+      body.classList.add("theme-light");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      const isLight = body.classList.toggle("theme-light");
+      body.classList.toggle("theme-dark", !isLight);
+      toggleBtn.textContent = isLight ? "☀️" : "🌙";
+      localStorage.setItem("sakshi-theme", isLight ? "light" : "dark");
+    });
+  </script>
+</body>
+</html>

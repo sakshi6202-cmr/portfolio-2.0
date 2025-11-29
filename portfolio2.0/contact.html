@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact | Sakshi Kumari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-dark">
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="brand-logo">
+          <div class="brand-logo-inner">SK</div>
+        </div>
+        <div>
+          <div class="brand-text-main">Sakshi Kumari</div>
+          <div class="brand-text-sub">AI &amp; ML · Data · Azure</div>
+        </div>
+      </div>
+
+      <nav class="nav-right">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="skills.html">Skills</a>
+          <a href="projects.html">Projects</a>
+          <a href="experience.html">Experience</a>
+          <a href="contact.html" class="active">Contact</a>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="glass-shell">
+      <section>
+        <div class="section-header">
+          <div class="section-title">
+            <span class="section-title-badge"></span>
+            Let’s Work Together
+          </div>
+          <p class="section-subtitle">Open to AI / ML roles, internships, and collaborations.</p>
+        </div>
+
+        <div class="contact-card">
+          <div>
+            <h3 class="contact-title">Got an AI / ML idea or role in mind?</h3>
+            <p class="contact-text">
+              Whether it's a data engineering problem, a machine learning challenge, or an Azure-based automation idea,
+              I’d love to hear about it. Reach out and let’s discuss how we can build something impactful together.
+            </p>
+          </div>
+
+          <div class="contact-info">
+            <div>📧 Email:
+              <a href="mailto:singhsakshi3498@gmail.com">singhsakshi3498@gmail.com</a>
+            </div>
+            <div>💼 LinkedIn:
+              <a href="https://www.linkedin.com/in/sakshi-kumari-519596280" target="_blank">
+                sakshi-kumari-519596280
+              </a>
+            </div>
+            <div>💻 GitHub:
+              <a href="https://github.com/sakshi6202-cmr" target="_blank">
+                github.com/sakshi6202-cmr
+              </a>
+            </div>
+            <div>📍 Location: Bangalore, Karnataka</div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        © <span id="year"></span> Sakshi Kumari · Contact page.
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const body = document.body;
+    const toggleBtn = document.getElementById("theme-toggle");
+    const savedTheme = localStorage.getItem("sakshi-theme");
+
+    if (savedTheme === "light") {
+      body.classList.remove("theme-dark");
+      body.classList.add("theme-light");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      const isLight = body.classList.toggle("theme-light");
+      body.classList.toggle("theme-dark", !isLight);
+      toggleBtn.textContent = isLight ? "☀️" : "🌙";
+      localStorage.setItem("sakshi-theme", isLight ? "light" : "dark");
+    });
+  </script>
+</body>
+</html>
